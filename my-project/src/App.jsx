@@ -5,7 +5,7 @@ import './App.css'
 
 import {BrowserRouter, Link, Routes, Route } from 'react-router-dom'
 
-import {logo} from './assets';
+import {logo,L} from './assets';
 
 import {Home, Createpost} from './Pages';
 
