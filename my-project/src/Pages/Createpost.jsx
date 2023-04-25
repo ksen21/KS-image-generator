@@ -23,6 +23,7 @@ function Createpost() {
    const [generatingImg,setGeneratingImg] = useState(false);
 
   const [loading, setLoading] = useState(false);
+  const [btnDisabled, setbtnDisabled] = useState(false);
 
 
   const handleSubmit = async(e) => {
@@ -32,7 +33,7 @@ function Createpost() {
     if(form.prompt && form.photo)
     {
       setLoading(true)
-
+      setbtnDisabled(true)
       try {
 
         const response = await fetch('https://ks-image-generator.onrender.com/api/v1/post',{
@@ -44,6 +45,7 @@ function Createpost() {
         })
         await response.json()
         navigate('/')
+        
       } catch (error) {
         alert(error)
         
@@ -195,7 +197,7 @@ function Createpost() {
 
             <button 
             type='submit'
-            className='mt-3 text-white bg-[#6469ff] font-medium  rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center' onClick={handleSubmit}> Share with community
+            className='mt-3 text-white bg-[#6469ff] font-medium  rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center disabled:bg-[#b5b6c4]' disabled = {btnDisabled} onClick={handleSubmit}> Share with community
             </button>
 
           </div>
