@@ -35,7 +35,9 @@ function Createpost() {
       setLoading(true)
       setbtnDisabled(true)
       try {
-
+        // 'http://localhost:8080/api/v1/post'
+        // 'https://ks-image-generator.onrender.com/api/v1/post'
+        // https://ks-image-generator.onrender.com
         const response = await fetch('https://ks-image-generator.onrender.com/api/v1/post',{
           method:'POST',
           headers:{
@@ -103,7 +105,7 @@ function Createpost() {
   //     alert("please enter prompt")
   //   }
 
-
+  // 'https://ks-image-generator.onrender.com/api/v1/dalle'
   // }
 
   const generateImage = async () => {

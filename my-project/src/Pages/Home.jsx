@@ -156,7 +156,7 @@ const Home = () => {
 
   const fetchPosts = async () => {
     setLoading(true);
-
+    // 'https://ks-image-generator.onrender.com/api/v1/post'
     try {
       const response = await fetch('https://ks-image-generator.onrender.com/api/v1/post', {
         method: 'GET',
